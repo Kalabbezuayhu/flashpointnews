@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlashPoint</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <nav>
+        <div class="main-nav container flex">
+            <a href="index.html" class="brand-logo" aria-label="FlashPointNews">
+                <span class="logo-text">flashpointnews</span>
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">☰</button>
+            <div class="nav-links">
+                <ul class="flex">
+                    <li class="hover-link nav-item" tabindex="0" role="button" id="politics" onClick="onNavItemClick('politics')">Politics</li>
+                    <li class="hover-link nav-item" tabindex="0" role="button" id="sports" onClick="onNavItemClick('sports')">Sports</li>
+                    <li class="hover-link nav-item" tabindex="0" role="button" id="business" onClick="onNavItemClick('business')">Business</li>
+                    <li class="hover-link nav-item" tabindex="0" role="button" id="technology" onClick="onNavItemClick('technology')">Technology</li>
+                    <li class="hover-link nav-item" tabindex="0" role="button" id="health" onClick="onNavItemClick('health')">Health</li>
+                    <li class="hover-link nav-item" tabindex="0" role="button" id="entertainment" onClick="onNavItemClick('entertainment')">Entertainment</li>
+                    <li class="hover-link nav-item" tabindex="0" role="button" id="science" onClick="onNavItemClick('science')">Science</li>
+                    <li class="hover-link nav-item" tabindex="0" role="button" id="weather" onClick="onNavItemClick('weather')">Weather</li>
+
+                </ul>
+            </div>
+            <div class="search-bar flex">
+                <input type="text" class="news-input" id="search-text" placeholder="Search topics or headlines">
+                <button class="search-button" id="search-button">Search</button>
+            </div>
+        </div>
+    </nav>
+
+
+    <main>
+        <div class="cards-container container flex" id="cardscontainer">
+
+
+
+        </div>
+        <div class="actions container">
+            <button class="load-more" id="load-more">Load More</button>
+        </div>
+    </main>
+
+    <div id="toast" class="toast" aria-live="polite" aria-atomic="true"></div>
+
+    <footer class="footer">
+        <div class="container flex footer-links">
+            <a href="about.html" class="hover-link">About Us</a>
+            <a href="contact.html" class="hover-link">Contact Us</a>
+            <a href="privacy.html" class="hover-link">Privacy Policy</a>
+            <a href="terms.html" class="hover-link">Terms &amp; Conditions</a>
+        </div>
+    </footer>
+
+    <template id="template-news-card">
+        <div class="card">
+            <div class="card-header">
+                <img src="https://via.placeholder.com/400x200" alt="" id="news-img">
+            </div>
+            <div class="card-content">
+                <h3 id="news-title">This is the Title</h3>
+                <h6 class="news-source" id="news-source">constGenius 02/02/2024</h6>
+                <p class="news-desc" id="news-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem
+                    incidunt ratione, dolore beatae quaerat voluptatum autem fugit voluptas minima eligendi facere
+                    tenetur cumque. Dolorem porro, fugiat distinctio a accusamus cum!</p>
+            </div>
+        </div>
+    </template>
+
+
+</body>
+
+</html>
