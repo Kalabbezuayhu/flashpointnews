@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlashPoint</title>
+    <title>FlashPointNews</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
 
 <body>
+    <!-- Navigation -->
     <nav>
         <div class="main-nav container flex">
             <a href="index.html" class="brand-logo" aria-label="FlashPointNews">
@@ -18,15 +19,14 @@
             <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">☰</button>
             <div class="nav-links">
                 <ul class="flex">
-                    <li class="hover-link nav-item" tabindex="0" role="button" id="politics" onClick="onNavItemClick('politics')">Politics</li>
-                    <li class="hover-link nav-item" tabindex="0" role="button" id="sports" onClick="onNavItemClick('sports')">Sports</li>
-                    <li class="hover-link nav-item" tabindex="0" role="button" id="business" onClick="onNavItemClick('business')">Business</li>
-                    <li class="hover-link nav-item" tabindex="0" role="button" id="technology" onClick="onNavItemClick('technology')">Technology</li>
-                    <li class="hover-link nav-item" tabindex="0" role="button" id="health" onClick="onNavItemClick('health')">Health</li>
-                    <li class="hover-link nav-item" tabindex="0" role="button" id="entertainment" onClick="onNavItemClick('entertainment')">Entertainment</li>
-                    <li class="hover-link nav-item" tabindex="0" role="button" id="science" onClick="onNavItemClick('science')">Science</li>
-                    <li class="hover-link nav-item" tabindex="0" role="button" id="weather" onClick="onNavItemClick('weather')">Weather</li>
-
+                    <li class="hover-link nav-item" tabindex="0" role="button" id="politics" onclick="onNavItemClick('politics')">Politics</li>
+                    <li class="hover-link nav-item" tabindex="0" role="button" id="sports" onclick="onNavItemClick('sports')">Sports</li>
+                    <li class="hover-link nav-item" tabindex="0" role="button" id="business" onclick="onNavItemClick('business')">Business</li>
+                    <li class="hover-link nav-item" tabindex="0" role="button" id="technology" onclick="onNavItemClick('technology')">Technology</li>
+                    <li class="hover-link nav-item" tabindex="0" role="button" id="health" onclick="onNavItemClick('health')">Health</li>
+                    <li class="hover-link nav-item" tabindex="0" role="button" id="entertainment" onclick="onNavItemClick('entertainment')">Entertainment</li>
+                    <li class="hover-link nav-item" tabindex="0" role="button" id="science" onclick="onNavItemClick('science')">Science</li>
+                    <li class="hover-link nav-item" tabindex="0" role="button" id="weather" onclick="onNavItemClick('weather')">Weather</li>
                 </ul>
             </div>
             <div class="search-bar flex">
@@ -36,20 +36,20 @@
         </div>
     </nav>
 
-
+    <!-- Main Content -->
     <main>
         <div class="cards-container container flex" id="cardscontainer">
-
-
-
+            <!-- News cards will be dynamically injected here -->
         </div>
         <div class="actions container">
             <button class="load-more" id="load-more">Load More</button>
         </div>
     </main>
 
+    <!-- Toast notifications -->
     <div id="toast" class="toast" aria-live="polite" aria-atomic="true"></div>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container flex footer-links">
             <a href="about.html" class="hover-link">About Us</a>
@@ -59,21 +59,34 @@
         </div>
     </footer>
 
+    <!-- News Card Template -->
     <template id="template-news-card">
         <div class="card">
             <div class="card-header">
-                <img src="https://via.placeholder.com/400x200" alt="" id="news-img">
+                <img src="https://via.placeholder.com/400x200" alt="News Image" id="news-img">
             </div>
             <div class="card-content">
-                <h3 id="news-title">This is the Title</h3>
-                <h6 class="news-source" id="news-source">constGenius 02/02/2024</h6>
-                <p class="news-desc" id="news-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem
-                    incidunt ratione, dolore beatae quaerat voluptatum autem fugit voluptas minima eligendi facere
-                    tenetur cumque. Dolorem porro, fugiat distinctio a accusamus cum!</p>
+                <h3 id="news-title">Sample News Title</h3>
+                <h6 class="news-source" id="news-source">FlashPointNews 02/02/2024</h6>
+                <p class="news-desc" id="news-desc">
+                    Stay informed with the latest updates from around the world. Our platform delivers accurate and timely news across politics, business, technology, health, and entertainment, keeping you connected to what matters most.
+                </p>
             </div>
         </div>
     </template>
 
+    <!-- PropellerAds Push Notifications - Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(function (registration) {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                })
+                .catch(function (error) {
+                    console.log('Service Worker registration failed:', error);
+                });
+        }
+    </script>
 
 </body>
 
